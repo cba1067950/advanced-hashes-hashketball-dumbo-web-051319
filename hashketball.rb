@@ -220,6 +220,7 @@ def big_shoe_rebounds
   hash = game_hash
   playerNames = []
   shoeSizes = []
+
   rebounds = []
 
   hash.each do |team, team_data|
@@ -233,12 +234,34 @@ def big_shoe_rebounds
             if player_data.to_s == "rebounds"
               rebounds << shoe
             end
+
+
+  hash.each do |team, team_data|
+    team_data.each do |find_players, stat_data|
+      stat_data.each do |players, find_shoe|
+          puts "made it"
+        find_shoe.each do |player_data, shoe|
+          if player_data.to_s == "shoe"
+            puts "Made it"
+            shoeSizes << shoe
+            playerNames << players
           end
         end
       end
     end
   end
+
   max = shoeSizes.max
   index = shoeSizes.index(max)
   rebounds[index]
+end
+
+  puts shoeSizes
+  puts playerNames
+end
+
+def num_points_scored (player_name)
+  # find Brendan Haywood
+  
+  # Once I find him, find his points
 end
