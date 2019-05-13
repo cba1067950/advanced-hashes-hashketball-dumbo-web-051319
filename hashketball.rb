@@ -96,7 +96,7 @@ def num_points_scored(player_name)
     team_data.each do |find_players, stat_data|
       if find_players.to_s == "players"
         stat_data.each do |players, find_points|
-          if players == player_name
+          if players[player_name]
             find_points.each do |player_data, points|
               if player_data.to_s == "points"
                 point_out = points
